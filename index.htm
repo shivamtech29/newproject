@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+p{display:none}
+
+div:hover p{display:block}
+
+h1 {color: red ;text-shadow:1px 1px grey;}
+img{background-attachment:fixed;}
+
+body{font-family:algerian; background-color: rgba(220,220,220,0.5);  font-size:2vw; font-variant:small-caps;}
+h4 {font-family:arial; color : blue;}
+h5 {font-family:verdana;}
+h6 {font-family:calibri; }
+.last{ background-color: rgb( 0,0,0); padding: 25px;}
+
+a:link{text-align: right; background-color: rgba( 0, 100,0,0.1);color:green; }
+a:visited{text-align: right; background-color:rgba(0,100,0,0.1);color:green;}
+a:hover{text-align: right; background-color:rgba( 100, 200,0,0.1);color:blue;}
+a:active{text-align: right; background-color:rgba( 100, 200,0,0.1);color:blue;}
+
+p {text-transform:capitalize; word-spacing:20px;}
+</style>
+
+
+<body text="black">
+
+<center>
+<h1>SHIVAM AGARWAL<br></h1>
+ WEB DEVELOPER</center><h3>
+<a href="#bottom" name="top" align= "right"><span style:"cursor:pointer">go to contact</span></a><br><br>
+
+
+<h5 font="arial">
+I AM A WEB DEVELOPER WITH FULL STACK SKILLS ( WORKING ON OTHER BIG PROJECTS). ALSO I LIKE RESEARCH ON TOPICS RELATED TO ELECRONICS, ELECTROMAGNETISM, ENERGY AND TRANSPORTATION. MY HOBBY IS ASTRONOMY WHICH CAUSES MY KEEN INTEREST IN SPACE.CONTACT ME FOR WORKING WITH ME ON EVERAL ONLINE PROJECTS ON GITHUB AND WORDPRESS. <BR><BR>You are currently looking at my third online availible project of which this is the first completele self designed one. have a great time visiting...
+</h4>
+<br><span style:"cursor:move">THIS IS ME</span><br><center><a href="me.jpg">
+<img id="demo" src="me.jpg" height="500" width="500" alt="me"></a></center>
+<br>
+<marquee scrollamount="10" behaviour="alternate">
+<h4>HELLO VISITOR! HOPE YOU ARE HAVING FUN SEEING THIS PAGE. YOU CAN TRY CLICKING ON ICONS AND LNKS TO GET A BETTER EXPERIENCE.</h4></marquee>
+<p id="demo"></p>
+<hr align="center" size="5" width="60%" color="red"><br><br>
+
+
+
+
+<p>THIS IS A FORM FOR REGISTRATION...</p><br><br>
+
+
+<br>
+<h4> You can fill out this form . It never saves any information neither it shares with anyone.
+</h4>
+<h5><form name="input" action="" method="POST">
+<fieldset>
+<legend>FILL</legend>
+NAME
+<input title="name" type="text" name="name" placeholder="your name" maxlength="10" required />
+<br>
+GENDER <br>
+<INPUT TYPE="RADIO" name="sex" value="male" > MALE<br>
+<input type="radio" name="sex" value="female"> FEMALE<BR>
+EDUCATION<br>
+<input type="checkbox" name="education" value="tenth" checked >10<br>
+<input type="checkbox" name="education" value="twelvth">12<br>
+<input type="checkbox" name="education" value="graduation">graduate<br>
+country
+<select name="india">
+<option value="india">india</option> 
+<option value="bhutan">bhutan</option> 
+<option value="usa">usa</option> 
+<option value="china">china</option> 
+</select>
+<br>
+<input type ="submit" value="Submit">
+</fieldset>
+</form>
+<BR><BR><BR><BR>
+<h4 class="last"><br><a href="#top" name="bottom">TOP</a>
+<br><br>
+Contact Details:<BR>
+email :<a href= "mailto:shivamagarwal36029@gmail.com"> mail</a><BR>
+phone : 9554918971<BR>
+WEBSITE : <a href= "https://shivamwebsites.wordpress.com">shivamwebsites.wordpress.com</a> <br>
+instagram:<a href= "https://www.instagram.com/the_shivam_agarwal_">view</a>          <BR>
+facebook: <a href= "https://www.facebook.com/profile.php?id=100023603390752">view</a>              <BR>
+linkedin: <a href= "https://www.linkedin.com/in/shivam-agarwal-profile">   view</a>          <BR>
+<CENTER>THANKYOU FOR VISITING...</CENTER><br></h4>
+
+
+<?php
+
+$server="localhost";
+$user="root";
+$pwd="shivam2907";
+$db="info";
+
+$connect=mysqli_connect($server,$user,$pwd,$db);
+if(!$connect)
+{ die("error".mysqli_connect_error()); }
+
+$name=$_POST["name"];
+$sex=$_POST["sex"];
+$education=$_POST["education"];
+$userQuery= "INSERT INTO mydb (name,sex,education) VALUES ('$name','$sex','$education')";
+$result=mysqli_query($connect,$userQuery);
+if(!$result)
+{die("errormsg".mysqli_error($connect));}
+else
+{print("added account");}
+mysqli_close($connect);
+
+?>
+
+</body></html>
